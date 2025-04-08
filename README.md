@@ -1,66 +1,80 @@
-## Foundry
+# Dessert DeFi Stablecoin
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Dessert DeFi Stablecoin is a decentralized finance (DeFi) project focused on providing a stable and secure cryptocurrency solution. This README outlines the key features, setup instructions, and usage details for the project.
 
-Foundry consists of:
+This is a project for learning. You can find the corresponding courses <a href="https://updraft.cyfrin.io/courses/advanced-foundry/develop-defi-protocol/">here</a>.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Features
 
-## Documentation
+- **Decentralized Stability**: A stablecoin backed by decentralized mechanisms.
+- **Transparency**: Fully auditable smart contracts.
+- **Security**: Built with robust security practices.
+- **Scalability**: Designed to handle high transaction volumes.
 
-https://book.getfoundry.sh/
+## Prerequisites
+
+Before setting up the project, ensure you have the following installed:
+
+- [Foundry](https://book.getfoundry.sh/) for Ethereum development
+- A supported Ethereum wallet (e.g., MetaMask)
+
+## Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/your-username/dessert-defi-stablecoin.git
+    cd dessert-defi-stablecoin
+    ```
+
+2. Install Foundry:
+
+    ```bash
+    curl -L https://foundry.paradigm.xyz | bash
+    foundryup
+    ```
+
+3. Build the project:
+
+    ```bash
+    forge build
+    ```
 
 ## Usage
 
-### Build
+### Deploying Contracts
 
-```shell
-$ forge build
+1. Configure your `.env` file with the required environment variables (e.g., private keys, RPC URLs).
+2. Deploy the contracts to your desired network:
+
+    ```bash
+    forge script script/Deploy.s.sol:Deploy --rpc-url <RPC_URL> --private-key <PRIVATE_KEY> --broadcast
+    ```
+
+### Running Tests
+
+Run the test suite to ensure everything is working as expected:
+
+```bash
+forge test
 ```
 
-### Test
+### Interacting with the Stablecoin
 
-```shell
-$ forge test
-```
+Use the provided frontend or scripts to interact with the deployed stablecoin contracts. Ensure your wallet is connected to the correct network.
 
-### Format
+## Contributing
 
-```shell
-$ forge fmt
-```
+Contributions are welcome! Please follow these steps:
 
-### Gas Snapshots
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Commit your changes and open a pull request.
 
-```shell
-$ forge snapshot
-```
+## License
 
-### Anvil
+This project is licensed under the [MIT License](LICENSE).
 
-```shell
-$ anvil
-```
+## Contact
 
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+For questions or support, please reach out to the project maintainers or open an issue in the repository.
